@@ -3,17 +3,19 @@ pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
+  stages{
     stage('Build image') {
       steps{
         script {
           docker.build "test9877/java-web-app:latest" 
       }
     }
-}
+  
     stage('Scan') {
       steps {
         sh 'trivy test9877/java-web-app:latest'
       }
     }
   }
-
+}
+}
