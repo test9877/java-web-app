@@ -1,13 +1,19 @@
 pipeline {
-  agent any
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
+
+  environment {
+    dockerimagename = "test9877/java-web-app:latest"
+    dockerImage = ""
   }
-  stages{
+
+  agent any
+
+  stages {
+
     stage('Build image') {
       steps{
         script {
-          docker.build "test9877/java-web-app:latest" 
+          dockerImage = docker.build dockerimagename
+        }
       }
     }
   
@@ -18,4 +24,4 @@ pipeline {
     }
   }
 }
-}
+
