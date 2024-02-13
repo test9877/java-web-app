@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t test9877/java-web-app:latest .'
+        docker build -t test9877/java-web-app:latest .'
       }
     }
     stage('Scan') {
