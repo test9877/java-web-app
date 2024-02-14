@@ -11,7 +11,7 @@ pipeline {
 
     stage('Build image') {
       steps{
-        sh 'docker build -t darinpope/java-web-app:latest .'
+        sh 'docker build -t https://github.com/test9877/java-web-app.git'
       }
     }
   
