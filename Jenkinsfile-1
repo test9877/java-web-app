@@ -17,7 +17,7 @@ pipeline {
   
     stage('Scan') {
       steps {
-        sh 'sudo trivy image test9877/java-web-app:latest'
+        sh 'sudo trivy image java-web-app:latest'
       }
     }
   }
