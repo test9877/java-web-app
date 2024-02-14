@@ -1,8 +1,8 @@
 pipeline {
 
   environment {
-    dockerimagename = "test9877/java-web-app:latest"
-    dockerImage = ""
+    dockerimagename = "java-web-app:latest"
+   // dockerImage = ""
   }
 
   agent any
@@ -11,7 +11,7 @@ pipeline {
 
     stage('Build image') {
       steps{
-        sh 'sudo docker build https://github.com/test9877/java-web-app.git'
+        sh 'sudo docker build -t dockerimagename https://github.com/test9877/java-web-app.git'
       }
     }
   
