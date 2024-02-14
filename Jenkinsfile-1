@@ -1,9 +1,5 @@
 pipeline {
 
-  environment {
-    //dockerimagename = "java-web-app:latest"
-   // dockerImage = ""
-  }
 
   agent any
 
